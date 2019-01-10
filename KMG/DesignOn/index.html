@@ -6,9 +6,8 @@
     <title>Unity WebGL Player | KMG_Main</title>
     <script src="Build/UnityLoader.js"></script>
     <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Web.json");
-      //TODO set real data from quebon.tv web
-      var data = {
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/새 폴더.json");
+	  var data = {
           host: "https://dev-api.quebon.tv",
           userid: "1343204322443265",
           nickname: "test",
@@ -19,6 +18,7 @@
       var SetUserData = function() {
           console.log("SET called")
           gameInstance.SendMessage("EC", "SetUserData", JSON.stringify(data));
+		  gameInstance.SendMessage("GameManager", "SetUserData", JSON.stringify(data));
       }
     </script>
   </head>
