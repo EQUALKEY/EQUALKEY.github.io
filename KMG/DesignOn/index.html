@@ -6,7 +6,20 @@
     <title>Unity WebGL Player | KMG_Main</title>
     <script src="Build/UnityLoader.js"></script>
     <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/새 폴더.json");
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Web.json");
+      //TODO set real data from quebon.tv web
+      var data = {
+          host: "https://dev-api.quebon.tv",
+          userid: "1343204322443265",
+          nickname: "test",
+          token: "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDcxMzUxMzUsInR5cGUiOiJJTkRWIiwiaWQiOiIxMzQzMjA0MzIyNDQzMjY1Iiwic2Vzc2lvbklkIjoiNWFhM2FmMjgtNzg5Ny00YWZlLTg0ZTgtNzAwOTlkN2UzMWFiIiwiYXV0aExldmVsIjoxLCJyb2xlcyI6W10sInN1YnNjcmlwdGlvbiI6eyJzdWJzY3JpcHRpb25JZCI6IjE1NjYzNzI0NzY5OTQ1NjMiLCJlbmREYXRlIjoiMjAxOS0wNC0xMCIsImFjdGl2ZSI6dHJ1ZX0sInJlYWRPbmx5IjpmYWxzZSwiaWF0IjoxNTQ3MTEzNTM1fQ.AxSDqU8n9ZN4UDk14wUhoiB2LaalgaPtvhQNh4uXB9s",
+          closeUrl: ""
+      };
+      //Send message to unity
+      var SetUserData = function() {
+          console.log("SET called")
+          gameInstance.SendMessage("EC", "SetUserData", JSON.stringify(data));
+      }
     </script>
   </head>
   <body>
