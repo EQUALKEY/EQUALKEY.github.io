@@ -6,19 +6,19 @@
     <title>Unity WebGL Player | KMG_Main</title>
     <script src="Build/UnityLoader.js"></script>
     <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/새 폴더.json");
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Web.json");
 	  var data = {
           host: "https://dev-api.quebon.tv",
-          userid: "1343204322443265",
+          userid: "1068183666556929",
           nickname: "test",
-          token: "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDcxMzUxMzUsInR5cGUiOiJJTkRWIiwiaWQiOiIxMzQzMjA0MzIyNDQzMjY1Iiwic2Vzc2lvbklkIjoiNWFhM2FmMjgtNzg5Ny00YWZlLTg0ZTgtNzAwOTlkN2UzMWFiIiwiYXV0aExldmVsIjoxLCJyb2xlcyI6W10sInN1YnNjcmlwdGlvbiI6eyJzdWJzY3JpcHRpb25JZCI6IjE1NjYzNzI0NzY5OTQ1NjMiLCJlbmREYXRlIjoiMjAxOS0wNC0xMCIsImFjdGl2ZSI6dHJ1ZX0sInJlYWRPbmx5IjpmYWxzZSwiaWF0IjoxNTQ3MTEzNTM1fQ.AxSDqU8n9ZN4UDk14wUhoiB2LaalgaPtvhQNh4uXB9s",
+          token: "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDcyMDc3NTEsInR5cGUiOiJJTkRWIiwiaWQiOiIxMDY4MTgzNjY2NTU2OTI5Iiwic2Vzc2lvbklkIjoiZWY4YzdiZTAtNjZlZC00YmU3LWIwNGUtMGQzZDJhYjJjNDlkIiwiYXV0aExldmVsIjo5LCJyb2xlcyI6W3sibmFtZSI6InByZW1pdW1fdXNlciIsInBlcm1pc3Npb25zIjpudWxsfV0sInN1YnNjcmlwdGlvbiI6eyJzdWJzY3JpcHRpb25JZCI6IjE0OTUyNTM4NDk2Mzc5MDkiLCJlbmREYXRlIjoiMjAxOS0wMS0xNyIsImFjdGl2ZSI6dHJ1ZX0sInJlYWRPbmx5IjpmYWxzZSwiaWF0IjoxNTQ3MTg2MTUxfQ.BMJh4dfNFw2igYfW-lzsEtzU6kqnbaN6wffTgLFJgFg",
           closeUrl: ""
       };
       //Send message to unity
       var SetUserData = function() {
           console.log("SET called")
           gameInstance.SendMessage("EC", "SetUserData", JSON.stringify(data));
-		  gameInstance.SendMessage("GameManager", "SetUserData", JSON.stringify(data));
+		      gameInstance.SendMessage("GameManager", "SetUserData", JSON.stringify(data));
       }
     </script>
   </head>
