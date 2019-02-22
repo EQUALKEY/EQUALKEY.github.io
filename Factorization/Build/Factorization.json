@@ -1,6 +1,6 @@
 {
 "companyName": "DefaultCompany",
-"productName": "Factorization_Proto",
+"productName": "Factorization_Main",
 "dataUrl": "Factorization.data.unityweb",
 "wasmCodeUrl": "Factorization.wasm.code.unityweb",
 "wasmFrameworkUrl": "Factorization.wasm.framework.unityweb",
