@@ -6,7 +6,20 @@
     <title>Unity WebGL Player | Factorization_Main</title>
     <script src="Build/UnityLoader.js"></script>
     <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Factorization.json");
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Web.json");
+      //TODO set real data from quebon.tv web
+      var data = {
+          host: "https://dev-api.quebon.tv",
+          userid: "1343204322443265",
+          nickname: "test",
+          token: "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NTA4NDUyNjUsInR5cGUiOiJJTkRWIiwiaWQiOiIxMzQzMjA0MzIyNDQzMjY1Iiwic2Vzc2lvbklkIjoiNTRiMWQ5YWUtY2M3MC00ODk0LThiMDktNmVlMDA1OWU0ZGVlIiwiYXV0aExldmVsIjoxLCJyb2xlcyI6W10sInN1YnNjcmlwdGlvbiI6eyJzdWJzY3JpcHRpb25JZCI6IjE1NjYzNzI0NzY5OTQ1NjMiLCJlbmREYXRlIjoiMjAxOS0wNC0xMCIsImFjdGl2ZSI6dHJ1ZX0sInJlYWRPbmx5IjpmYWxzZSwiaWF0IjoxNTUwODIzNjY1fQ.VyH9Z5xnAU6sPviRhZ3ZYK1I-m89UEEpx8en6qnongU",
+          closeUrl: ""
+      };
+      //Send message to unity
+      var SetUserData = function() {
+          console.log("SET called")
+          gameInstance.SendMessage("RankManager", "SetUserData", JSON.stringify(data));
+      }
     </script>
   </head>
   <body>
